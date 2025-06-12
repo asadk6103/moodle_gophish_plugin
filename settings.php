@@ -29,4 +29,19 @@ if ($hassiteconfig) {
         $CFG->wwwroot . '/local/gophishintegration/sync.php',
         'local/gophishintegration:syncusers'
     ));
+
+    $ADMIN->add('localplugins', new admin_externalpage(
+        'local_gophishintegration_launch',
+        'GoPhish Launch Campaign',
+        $CFG->wwwroot . '/local/gophishintegration/launch.php',
+        'local/gophishintegration:launchcampaign'
+    ));
+
+
+     $ADMIN->add('localplugins', new admin_externalpage(
+        'local_gophishintegration_email_template',
+        'GoPhish Email Templates',
+        $CFG->wwwroot . '/local/gophishintegration/template.php',
+        'local/gophishintegration:createemailtemplate'
+    ));
 }
