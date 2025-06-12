@@ -24,3 +24,14 @@ $string['templatecreatedsuccess'] = 'Email template successfully created';
 
 $string['gophishintegration'] = 'GoPhish';
 $string['emailtemplates'] = 'Email Templates';
+
+$string['lpname'] = 'Name';
+$string['lphtmlcontent'] = 'HTML Content';
+$string['lpcapturedata'] = 'Capture Submitted Data ';
+$string['lpcapturepassword'] = 'Capture Passwords';
+$string['lpurl'] = 'Redirect URL';
+$string['createlp'] = 'Create Landing Page';
+$string['lpcapturedatahelpertext'] = 'Capture Submitted Data';
+$string['lpcapturedatahelpertext_help'] = 'If the landing page contains a form, submitted input (except password) will be captured.';
+$string['lpurlhelpertext'] = 'Capture Passwords';
+$string['lpurlhelpertext_help'] = 'This option lets you redirect the user to a page after credentials are submitted.';

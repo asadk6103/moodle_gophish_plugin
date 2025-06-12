@@ -44,4 +44,11 @@ if ($hassiteconfig) {
         $CFG->wwwroot . '/local/gophishintegration/template.php',
         'local/gophishintegration:createemailtemplate'
     ));
+     
+    $ADMIN->add('localplugins', new admin_externalpage(
+        'local_gophishintegration_landing_pages',
+        'GoPhish Landing Pages',
+        $CFG->wwwroot . '/local/gophishintegration/landingpage.php',
+        'local/gophishintegration:createlandingpage'
+    ));
 }
