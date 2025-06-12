@@ -53,10 +53,6 @@ class api_client
         $ch = curl_init();
 
         $url = $endpoint;
-       
-
-          echo json_encode($payload);
-        die();
 
         // Set cURL options
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -80,9 +76,6 @@ class api_client
         }
         curl_close($ch);
 
-
-         echo json_encode($response);
-        die();
         return $response;
     }
 
@@ -151,5 +144,22 @@ class api_client
         echo $result;
         die();
         return isset($result->id) ? $result : false;
+    }
+
+
+    public function create_template($name, $subject, $html, $text)
+    {
+        $payload = [
+            'name' => $name,
+            'subject' => $subject,
+            'html' => $html,
+            'text' => $text
+        ];
+
+        $url = $this->apiurl . '/api/templates/';
+        $response = $this->postData($url, $payload);
+
+        $result = json_decode($response, true);
+        return isset($result['id']) ? $result : false;
     }
 }
