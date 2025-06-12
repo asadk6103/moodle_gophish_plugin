@@ -30,5 +30,12 @@ $capabilities = [
         'archetypes' => [
             'manager' => CAP_ALLOW
         ]
+    ],
+    'local/gophishintegration:createlandingpage' => [
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_SYSTEM,
+        'archetypes' => [
+            'manager' => CAP_ALLOW
+        ]
     ]
 ];

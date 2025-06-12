@@ -162,4 +162,22 @@ class api_client
         $result = json_decode($response, true);
         return isset($result['id']) ? $result : false;
     }
+
+    public function create_landing_page($name, $html, $capture_credentials, $capture_passwords, $redirect_url)
+    {
+        $payload = [
+            'name' => $name,
+            'html' => $html,
+            'capture_credentials' => (bool)$capture_credentials,
+            'capture_passwords' => (bool)$capture_passwords,
+            'enable_reporting' => true,
+            'redirect_url' => $redirect_url,
+        ];
+
+        $url = $this->apiurl . '/api/pages/';
+        $response = $this->postData($url, $payload);
+
+        $result = json_decode($response, true);
+        return isset($result['id']) ? $result : false;
+    }
 }
