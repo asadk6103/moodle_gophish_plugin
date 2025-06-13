@@ -51,4 +51,11 @@ if ($hassiteconfig) {
         $CFG->wwwroot . '/local/gophishintegration/landingpage.php',
         'local/gophishintegration:createlandingpage'
     ));
+  
+    $ADMIN->add('localplugins', new admin_externalpage(
+        'local_gophishintegration_sending_profiles',
+        'GoPhish Sending Profiles',
+        $CFG->wwwroot . '/local/gophishintegration/sendingprofile.php',
+        'local/gophishintegration:createsendingprofiles'
+    ));
 }
