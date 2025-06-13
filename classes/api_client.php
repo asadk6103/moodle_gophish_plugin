@@ -180,4 +180,24 @@ class api_client
         $result = json_decode($response, true);
         return isset($result['id']) ? $result : false;
     }
+
+    public function create_sending_profile($name, $username, $password, $host, $interface_type, $from_address, $ignore_cert_errors)
+    {
+        $payload = [
+            'name' => $name,
+            'username' => $username,
+            'password' => $password,
+            'host' => $host,
+            'interface_type' => $interface_type,
+            'from_address' => $from_address,
+            'ignore_cert_errors' => (bool)$ignore_cert_errors,
+            'headers' => []
+        ];
+
+
+        $url = $this->apiurl . '/api/smtp/';
+        $response = $this->postData($url, $payload);
+        $result = json_decode($response, true);
+        return isset($result['id']) ? $result : false;
+    }
 }

@@ -23,11 +23,11 @@ class create_landing_page_form extends moodleform
 
         $mform->addElement('advcheckbox', 'lpcapturepassword', get_string('lpcapturepassword', 'local_gophishintegration'));
         $mform->setType('lpcapturepassword', PARAM_BOOL);
-     
+
 
         $mform->addElement('text', 'lpurl', get_string('lpurl', 'local_gophishintegration'));
         $mform->setType('lpurl', PARAM_URL);
-           $mform->addHelpButton('lpurl', 'lpurlhelpertext', 'local_gophishintegration');
+        $mform->addHelpButton('lpurl', 'lpurlhelpertext', 'local_gophishintegration');
 
         $this->add_action_buttons(true, get_string('createlp', 'local_gophishintegration'));
     }
